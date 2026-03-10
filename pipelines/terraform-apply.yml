@@ -27,33 +27,6 @@ pipelines:
                     command: terraform
                     arguments: [ "apply", "-var-file=env-dev/main.tfvars", "-auto-approve" ]
 
-
-      - QA:
-          fetch_materials: true
-          clean_workspace: false
-          jobs:
-            deployment:
-              timeout: 0
-              tasks:
-                - exec:
-                    command: ls
-                    arguments:
-                      - -l
-                      - -A
-
-      - UAT:
-          fetch_materials: true
-          clean_workspace: false
-          jobs:
-            deployment:
-              timeout: 0
-              tasks:
-                - exec:
-                    command: ls
-                    arguments:
-                      - -l
-                      - -A
-
       - PROD:
           fetch_materials: true
           clean_workspace: false
