@@ -32,9 +32,6 @@ pipelines:
       - PROD:
           fetch_materials: true
           clean_workspace: false
-          approval:
-            type: manual
-            allow_only_on_success: true
           jobs:
             deployment:
               timeout: 0
